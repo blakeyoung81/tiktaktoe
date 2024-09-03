@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe with Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            background-color: #fff;
+            border: 2px solid #333;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cell:hover {
+            background-color: #ddd;
+        }
+        .hidden {
+            display: none;
+        }
+        #question-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #333;
+            width: 300px;
+            text-align: center;
+        }
+        #question-container p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .answer-choice {
+            display: block;
+            margin: 5px 0;
+        }
+        #submit-answer {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #submit-answer:hover {
+            background-color: #0056b3;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Tic-Tac-Toe with Questions</h1>
+<div id="board">
+    <div class="cell" data-index="0"></div>
+    <div class="cell" data-index="1"></div>
+    <div class="cell" data-index="2"></div>
+    <div class="cell" data-index="3"></div>
+    <div class="cell" data-index="4"></div>
+    <div class="cell" data-index="5"></div>
+    <div class="cell" data-index="6"></div>
+    <div class="cell" data-index="7"></div>
+    <div class="cell" data-index="8"></div>
+</div>
+
+<div id="question-container" class="hidden">
+    <p id="question"></p>
+    <label class="answer-choice">
+        <input type="radio" name="answer" value="A"> <span id="choiceA"></span>
+    </label>
+    <label class="answer-choice">
+        <input type="radio" name="answer" value="B"> <span id="choiceB"></span>
+    </label>
+    <label class="answer-choice">
+        <input type="radio" name="answer" value="C"> <span id="choiceC"></span>
+    </label>
+    <label class="answer-choice">
+        <input type="radio" name="answer" value="D"> <span id="choiceD"></span>
+    </label>
+    <button id="submit-answer">Submit</button>
+</div>
+
+<p id="message"></p>
+
+<script src="game.js"></script>
+
+</body>
+</html>
